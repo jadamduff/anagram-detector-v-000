@@ -5,8 +5,17 @@ class Anagram
     @word = word
   end
 
-  def match
-    
+
+
+  def match(matches)
+    word = @word.split('').sort.join
+    matches_arr = []
+    matches.each do |match|
+      if match.split('').sort.join == word
+        match << matches_arr
+      end
+    end
+    matches_arr
   end
 
 end
